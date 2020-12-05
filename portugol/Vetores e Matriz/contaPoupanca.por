@@ -6,6 +6,7 @@ programa
 	  const inteiro numeroConta = 2020
 	  const cadeia numeroCPF = "000.111.222-4"
 	   //Reais
+
 		
 		//inteiro N=10
 		inteiro movimentacao[10]
@@ -18,7 +19,7 @@ programa
 		escreva ("\n------------------------------------------------------\n")
 		escreva("         Seja Bem vindo ao seu Banco Digital G&4")
 		escreva ("\n------------------------------------------------------\n")
-		escreva("Selecione uma das seguintes operações:\n1-Consultar o saldo\n2-Creditar em conta\n3-Debitar em conta\n")
+		escreva("Selecione uma das seguintes operações:\n1-Conta Poupança o saldo\n2-Creditar em conta\n3-Debitar em conta\n")
 		leia(opcao)
 
           escreva("\nInforme o dia do aniversário da conta: ")
@@ -82,7 +83,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 179; 
+ * @POSICAO-CURSOR = 163; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

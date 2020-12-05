@@ -1,5 +1,6 @@
 programa
 {
+	inclua biblioteca Texto
 	
 	funcao inicio()
 	{
@@ -28,17 +29,27 @@ programa
 		caracter opcao= 's'
 		inteiro salva=0
 		inteiro painel
-		inteiro encontra=1
+		inteiro encontra=0,encontra4=0,encontra5=0
 		inteiro notaLimite
 		inteiro tampa
+		inteiro k=0
 		//AJUSTE DE MATRICULA
 		para (inteiro x=0; x< 39; x++)
 		{
-			se(x < 10){
+			se(x < 9){
 				matriculas[x] = "G4-0"+(x+1)	
 			}
 			senao{
 				matriculas[x] = "G4-"+(x+1)	
+			}
+		}
+		para (inteiro x=0; x< 39; x++)
+		{	
+			se(notas[x]==0 e sexoAlunos[x]=='M'){
+				situacao[x]="REPROVADO"
+			}
+			senao{
+				situacao[x]="REPROVADA"
 			}
 		}
 		//lOOP PRINCIPAL
@@ -63,16 +74,17 @@ programa
 				faca
 				{
 					linha()
-					escreva("Escolha um aluno pela matricula:" )
-					
+					escreva("Escolha um aluno pela matricula.\nPara isso Digite um Código de mátricula válido, exemplo: G4-XX, onde XX varia de 01 a 39: " )
 					leia(aluno)
+					aluno=Texto.caixa_alta(aluno)
+					linha()
 				
 					para (inteiro x=0; x<39; x++) //molejão
 					{
 						se(aluno == matriculas[x])
 						{
 							se(sexoAlunos[x]=='M'){
-								escreva("Nome do aluno: "+alunos[x]+"\nInforme a nota do aluno: ")
+								escreva("Nome do aluno: "+alunos[x]+"\nInforme uma nota de 0 a 10: ")
 								leia(notas[x])
 								salva=x
 								se(notas[x]<=5)
@@ -89,7 +101,7 @@ programa
 							}
 							senao se (sexoAlunos[x]=='F')
 							{
-								escreva("Nome da aluna: "+alunos[x]+"\nInforme a nota do aluno: ")
+								escreva("Nome da aluna: "+alunos[x]+"\nInforme uma nota de 0 a 10: ")
 								leia(notas[x])
 								salva=x
 								se(notas[x]<=5)
@@ -105,45 +117,38 @@ programa
 								}
 								
 							}
-							
+						encontra=1	
 						}
 						//Acrescentar
-						//senao se (aluno != matriculas[x])
-						//{	
-						//		se(x==38)
-						//		{
-						//		escreva("Aluno não encontrado!\n")
-						//		encontra=0
-						//		}	
-						//}
+	
+					}
+					se(encontra==0)
+					{
+						escreva("Aluno não encontrado, Digite um código de mátricula válido!\n")
 					}
 					escreva("Deseja continuar? (S) Sim ou (N) Não\n")
 					leia(opcao)
 					
 				}enquanto(opcao == 'S' ou opcao == 's')
 				
-				se((opcao == 'N' ou opcao == 'n') )
+				se((opcao == 'N' ou opcao == 'n') e encontra==1)
 				{	
 					linha()
-					escreva("Matricula: "+matriculas[salva]+"\tNome: "+alunos[salva]+"\tSexo: "+sexoAlunos[salva]+"\tNota:" +notas[salva]+"\tSituação:"+situacao[salva])	
+					escreva("Matricula: "+matriculas[salva]+"\tNome: "+alunos[salva]+"\t\tSexo: "+sexoAlunos[salva]+"\t\tNota:" +notas[salva]+"\tSituação:"+situacao[salva])	
 				}	
 				
 			}//Final da Opcao 1
 			
 			senao se (painel==2)
-			{		
+			{		linha()
 					escreva("Lista de Homens:")
-					para (inteiro x=0; x< 39; x++){
-					se(sexoAlunos[x] == 'M'){
-						se(notas[x] == 0 e situacao[x] == " "){
-							escreva("\nMatricula: "+matriculas[x]+"\tNome: "+alunos[x]+"\tSexo: "+sexoAlunos[x])
-						
-						}
-						senao{
-							escreva("\nMatricula: "+matriculas[x]+"\tNome: "+alunos[x]+"\tSexo: "+sexoAlunos[x]+"\tNota:" +notas[x]+"\tSituação:"+situacao[x])	
+					para (inteiro x=0; x< 39; x++)
+					{
+						se(sexoAlunos[x] == 'M')
+						{
+							escreva("\nMatricula: "+matriculas[x]+"\tSexo: "+sexoAlunos[x]+"\t\tNota:" +notas[x]+"\tSituação:"+situacao[x]+"\tNome: "+alunos[x])	
 						}
 					}
-				}
 				
 						
 				//GIDEÃO
@@ -151,54 +156,54 @@ programa
 			
 			senao se (painel==3)
 			{
+				linha()
 				escreva("Lista de Mulheres:")
-				para (inteiro x=0; x< 39; x++){
-					se(sexoAlunos[x] == 'F'){
-						se(notas[x] == 0 e situacao[x] == " "){
-							escreva("\nMatricula: "+matriculas[x]+"\tNome: "+alunos[x]+"\tSexo: "+sexoAlunos[x])
-						
-						}
-						senao{
-							escreva("\nMatricula: "+matriculas[x]+"\tNome: "+alunos[x]+"\tSexo: "+sexoAlunos[x]+"\tNota:" +notas[x]+"\tSituação:"+situacao[x])	
+					para (inteiro x=0; x< 39; x++)
+					{
+						se(sexoAlunos[x] == 'F')
+						{
+							escreva("\nMatricula: "+matriculas[x]+"\tSexo: "+sexoAlunos[x]+"\t\tNota:" +notas[x]+"\tSituação:"+situacao[x]+"\tNome: "+alunos[x])					
 						}
 					}
-				}
 				//VERONICA
 			}//Final da Opcao 3
 			
 			senao se (painel==4)
 			{
-				escreva("\nLISTA DOS APROVADOS: ")
-			 para(inteiro x = 0; x < 39; x++)
-			 {
-			  	se(situacao[x] =="APROVADO")
-			  	{
-			  	   
-			  		escreva("\nMatricula: "+matriculas[x]+"\tNome: "+alunos[x]+"\tSexo: "+sexoAlunos[x]+"\n")
-			  			
-			  	}
-			  	senao se(situacao[x] == "APROVADA" ou situacao[x] == "APROVADA"){
+				escreva("\nLISTA DOS ALUNOS APROVADOS E ALUNAS APROVADAS: ")
+				 para(inteiro x = 0; x < 39; x++)
+			 	{
+			  		se(situacao[x] =="APROVADO" ou situacao[x] == "APROVADA")
+			  		{
+			  			escreva("\nMatricula: "+matriculas[x]+"\tSexo: "+sexoAlunos[x]+"\t\tNota:" +notas[x]+"\tNome: "+alunos[x])	
+			  			 encontra4=1	
+			  		} 	
 			  		
-			  		escreva("\nMatricula: "+matriculas[x]+"\tNome: "+alunos[x]+"\tSexo: "+sexoAlunos[x]+"\n")
-			  	}
-			  	
-			  	
-			 }
+			 	}
+			 	se(encontra4==0)
+				{
+					escreva("Lista vazia")
+				}
 				
 				//JJ
 			}//Final da Opcao 4
 			
 			senao se (painel==5)
 			{
-				escreva("\nLISTA DE REPROVADOS: \n")
-				para(inteiro kc = 0; kc < 39; kc++) {
-					se(situacao[kc] == "REPROVADO" e sexoAlunos[kc] == 'M' ) {
-						escreva("\nMatricula" + matriculas[kc]+ "\tNome: "+alunos[kc]+"\tSexo:"+sexoAlunos[kc]+"\n")	
+				escreva("\nLISTA DOS ALUNOS REPROVADOS E ALUNAS REPROVADAS: \n")
+				para(inteiro kc = 0; kc < 39; kc++)
+				{
+					se(situacao[kc] == "REPROVADO" ou situacao[kc] == "REPROVADA")
+					{	
+						escreva("\nMatricula: "+matriculas[kc]+"\tSexo: "+sexoAlunos[kc]+"\t\tNota:" +notas[kc]+"\tNome: "+alunos[kc])	
+					     encontra5=1	
 					}
+						
 					
-					senao se(situacao[kc] == "REPROVADA" e sexoAlunos[kc] == 'F') {
-							escreva("\nMatricula" + matriculas[kc]+ "\tNome: "+alunos[kc]+"\tSexo:"+sexoAlunos[kc]+"\n")
-					}
+				}
+				se(encontra5==0)
+				{
+					escreva("Lista vazia")
 				}
 				//BEYMAR
 			}//Final da Opcao 5
@@ -207,29 +212,36 @@ programa
 				linha()
 				escreva("Escreva uma nota limite: ")
 				leia(notaLimite)
-				escreva("Deseja ver as notas acima ou abaixo dessa nota. [1]Acima ou [2]Abaixo: ")
+				escreva("Deseja ver as notas acima ou abaixo dessa nota limite. [1]Acima ou [2]Abaixo: ")
 				leia(tampa)
 				linha()
 				se(tampa==1){
-					escreva("Lista de alunos com nota maior que "+notaLimite+":\n")
+					
+					escreva("Lista de alunos e alunas com nota maior que "+notaLimite+": \n")
 					para (inteiro x=0; x< 39; x++){
 		
 						se(notas[x]>=notaLimite){
 							
-							escreva("Matricula: "+matriculas[x]+"\tNome: "+alunos[x]+"\tSexo: "+sexoAlunos[x]+"\tNota:" +notas[x]+"\tSituação:"+situacao[x])	
+							escreva("Matricula: "+matriculas[x]+"\tSexo: "+sexoAlunos[x]+"\t\tNota:" +notas[x]+"\tSituação:"+situacao[x]+"\tNome: "+alunos[x]+"\n")	
 						}
-					
+						senao{
+							k=1
+						}
+						
+					}
+					se(k==1)
+					{
+						escreva("Não existe uma nota maior que "+notaLimite)
 					}
 				}
 				se(tampa==2){
-					escreva("Lista de alunos com nota menor que "+notaLimite+":\n")
-					para (inteiro x=0; x< 39; x++){
-		
-						se((notas[x]<=notaLimite)e notas[x]!=0){
-							
-							escreva("Matricula: "+matriculas[x]+"\tNome: "+alunos[x]+"\tSexo: "+sexoAlunos[x]+"\tNota:" +notas[x]+"\tSituação:"+situacao[x])	
+					escreva("Lista de alunos e alunas com nota menor que "+notaLimite+": \n")
+					para (inteiro x=0; x< 39; x++)
+					{
+						se(notas[x]<=notaLimite)
+						{
+							escreva("Matricula: "+matriculas[x]+"\tSexo: "+sexoAlunos[x]+"\t\tNota:" +notas[x]+"\tSituação:"+situacao[x]+"\tNome: "+alunos[x]+"\n")			
 						}
-					
 					}
 				}
 			
@@ -249,7 +261,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 7092; 
+ * @POSICAO-CURSOR = 7217; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
