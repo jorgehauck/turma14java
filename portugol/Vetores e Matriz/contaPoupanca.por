@@ -3,15 +3,26 @@ programa
 	inclua biblioteca Matematica -->mat
 	
 	funcao inicio(){
-	  const inteiro numeroConta = 2020
-	  const cadeia numeroCPF = "000.111.222-4"
-	   //Reais
-
+	  const inteiro numeroConta = 0, numeroCPF = 0
+	  
+             cadeia clientes[39] ={ "Allen de Lima Vieira", "André de Brito Silva da Costa","Bárbara Liboni Guerra",	
+						"Beatriz Martins","Beymar Jhoel Acapa Lima","Breno Nogueira Botelho Noccioli",
+						"Daniel Augusto Gomes Ferreira Filho","Danilo Mendes Ferreira","Danilo Pereira da Silva",
+						"Davi Silva Vieira","Diego Vinicio da Silva Nascimento","Erick Costa Ferreira",
+						"Ewerton Inacio Lima","FERNANDA AGAPITO","Fernanda Barbosa Ferraz","Francisco José Pires",
+						"Gabriel Sérgio Nascimento Santos Gonçalves","Gideão da Silva Idelfonso",
+						"GILSON AMORIM DE MATOS","Guilherme Gonçalves da Silva","Gustavo Rabelo Teles",
+						"HELOISA BEATRIZ DE OLIVEIRA COSTA","Igor Mateus Queiroz Gato","Isabel Emiko Yamakawa Oyama",
+						"Jackeline Akemi de Moura","José Jorge Hauck Júnior","Juliana Santos André",
+						"Kélven Cleiton de Araújo Brandão","Laís Lima Santos","Lucas anseloni barros",
+						"Lucas Gonçalves da SIlva","luis felipe da silva","Luiz Felipe da Silva Magalhães",
+						"Marcos Eduardo Gomes Gonçalves","Micaely da Silva Lima","Rafaela Oliveira Silva",
+						"Tiago dos Santos Martins","Verônica Navarro Almenara","Vinicius Alves Miranda" }
 		
 		//inteiro N=10
-		inteiro movimentacao[2][2]
-		real saldoConta = 0.0//Reais
-		inteiro opcao, status
+		inteiro movimentacao[10][31]
+		real saldoConta = 0.0//Reais  
+		inteiro opcao, status       / 
 		const inteiro DATA_ANIVERSARIO = 5
 		real credito = 0.0, debito = 0.0
 		inteiro dataAniversarioConta = 0
@@ -96,7 +107,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2765; 
+ * @POSICAO-CURSOR = 3914; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
