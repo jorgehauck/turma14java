@@ -13,6 +13,7 @@ public class Exercicio6 {
 		y2 = leia.nextDouble();
 		
 		d = Math.sqrt((Math.pow(x2 + x1, 2)) + Math.pow(y2 + y1,2));
+		
 		System.out.printf("A distância entre os pontos é de: %.2f",d);
 		leia.close();
 
