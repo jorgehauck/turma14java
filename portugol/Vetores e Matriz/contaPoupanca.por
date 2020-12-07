@@ -20,7 +20,7 @@ programa
 						"Tiago dos Santos Martins","Verônica Navarro Almenara","Vinicius Alves Miranda" }
 		
 		//inteiro N=10
-		inteiro movimentacao[10][31]
+		inteiro movimentacao[2][2]
 		real saldoConta = 0.0//Reais  
 		inteiro opcao, status       / 
 		const inteiro DATA_ANIVERSARIO = 5
@@ -107,7 +107,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3914; 
+ * @POSICAO-CURSOR = 2130; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
