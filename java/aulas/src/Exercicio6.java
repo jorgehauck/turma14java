@@ -6,7 +6,7 @@ public class Exercicio6 {
 		
 		double x1, y1, x2, y2, d;
 		System.out.println("Digite os valores de X1 e Y1: ");
-		x1 = leia.nextDouble();
+		x1 = leia.nextDouble(); 
 		y1 = leia.nextDouble();
 		System.out.println("Digite os valores de X2 e Y2: ");
 		x2 = leia.nextDouble();
