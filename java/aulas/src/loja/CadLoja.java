@@ -12,7 +12,7 @@ public class CadLoja {
 		linha();
 		System.out.println("                JJ Informática LTDA®                        ");
 		linha();
-
+        
 		System.out.println("[1] - COMPRAR PRODUTOS");
 		System.out.println("[2] - GERENCIAR ESTOQUE");
 		System.out.println("[3] - SAIR");
@@ -26,7 +26,7 @@ public class CadLoja {
 			System.out.print("GENERO DO CLIENTE [1] Masculino [2] Feminino: ");
 			genero = leitor.nextInt();
 
-			System.out.println(retornaSexo(nomeCliente, genero));
+			retornaSexo(nomeCliente, genero);
 		}
 
 		leitor.close();
@@ -35,14 +35,14 @@ public class CadLoja {
 	public static String retornaSexo(String nomeCliente, int genero) {
 		String sexo = "";
 		if(genero == 1) {
-			sexo = "Seja bem-vindo " + nomeCliente;
+			 System.out.print("Seja bem-vindo " + nomeCliente);
 		} else if (genero == 2) {
-			sexo = "Seja bem-vinda " + nomeCliente;
+			 System.out.print("Seja bem-vinda " + nomeCliente);
 		}
 		return sexo;
 	}
 
-	static void linha() {
+	  public static void linha() {
 		System.out.println("═════════════════════════════════════════════════════");
 	}
 
