@@ -31,6 +31,8 @@ public class CadLoja {
 
 		leitor.close();
 	}
+	
+	
 
 	public static String retornaSexo(String nomeCliente, int genero) {
 		String sexo = "";
