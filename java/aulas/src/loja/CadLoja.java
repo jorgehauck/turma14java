@@ -78,7 +78,7 @@ public class CadLoja {
 	}
 
 	public static void linha() {
-		System.out.println("\n═════════════════════════════════════════════════════");
+		System.out.println("═════════════════════════════════════════════════════");
 	}
 
 }
