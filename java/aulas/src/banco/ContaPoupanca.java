@@ -30,7 +30,7 @@ public class ContaPoupanca {
 		double transacoes;
 		int aniversario[] = new int[40]; // aniversario[] = sorteio.nextInt(31) + 1;
 		final int DATA_ANIVERSARIO = 10;
-		final int MAX_MOVIMENTACOES = 3;
+		final int MAX_MOVIMENTACOES = 10;
 		int diaUsuario;
 		int decisao;
 		int opcaoMenuPrincipal;
@@ -173,9 +173,9 @@ public class ContaPoupanca {
 
 		for (int x = 0; x < 40; x++) {
 			conta[x] = (x + 1);
-			aniversario[x] = sorteia.nextInt(31) + 1;
 			tipoConta[x] = sorteia.nextInt(4) + 1;
 			saldoConta[x] = 0.0;
+			aniversario[x] = sorteia.nextInt(31) + 1;
 		}
 		tipoConta[0] = 1;
 	}
