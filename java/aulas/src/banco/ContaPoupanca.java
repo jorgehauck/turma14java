@@ -149,7 +149,10 @@ public class ContaPoupanca {
 				{
 					System.out.printf("SALDO ATUAL: R$ %.2f\n",saldoConta[escolha]);
 				}
-
+				if(opcaoMenuPrincipal == 3)
+				{
+				System.out.println("Saindo do App, muito obrigado por utilizar nossos serviços!");
+				}
 			} while (opcaoMenuPrincipal != 3);
 
 		} else if (tipoConta[escolha] == 2) {
@@ -173,11 +176,11 @@ public class ContaPoupanca {
 
 		for (int x = 0; x < 40; x++) {
 			conta[x] = (x + 1);
-			tipoConta[x] = sorteia.nextInt(4) + 1;
+			tipoConta[x] = 1;//sorteia.nextInt(4) + 1;
 			saldoConta[x] = 0.0;
 			aniversario[x] = sorteia.nextInt(31) + 1;
 		}
-		tipoConta[0] = 1;
+		//tipoConta[0] = 1;
 	}
 
 }
