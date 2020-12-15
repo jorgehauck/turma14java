@@ -17,6 +17,9 @@ public class CadLoja {
 		int genero;
 		int opcao;
 		int quantidade;
+		char decisao;
+		do
+		{
 		linha();
 		System.out.println("                JJ Informática LTDA®                        ");
 		linha();
@@ -59,11 +62,13 @@ public class CadLoja {
         quantidade = leitor.nextInt();
         
         linha();
-        System.out.printf("R$%.2f\t %d\t %s", precoUnitarios[escolhido]*quantidade, quantidade, produtos[escolhido]);
+        System.out.printf("R$%.2f\t %d\t %s\n", precoUnitarios[escolhido]*quantidade, quantidade, produtos[escolhido]);
 		linha();
+		System.out.println("DESEJA CONTINUAR? [S/N]");
+		decisao = leitor.next().toUpperCase().charAt(0);
 		
-		
-		
+		}while(decisao == 'S' && decisao !='N');
+		 System.out.println("OBRIGADO POR VISITAR A NOSSA LOJA, VOLTE SEMPRE!!!");
 		leitor.close();
 	}
 
