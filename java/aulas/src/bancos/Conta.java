@@ -41,8 +41,15 @@ public abstract class Conta {
 	//METODOS
 	public void debito(double valorDebito) 
 	{
-		this.saldo = this.saldo - valorDebito;
-
+		if (testarSaldo(valorDebito))  
+		{
+			this.saldo = this.saldo - valorDebito;
+		} 
+		else
+		{
+			System.out.println("SALDO INDISPONIVEL");
+		}
+		
 	}
 
 
@@ -53,5 +60,21 @@ public abstract class Conta {
 	}
 
    
+	
+	
+	public boolean testarSaldo(double valor)
+   {
+	   boolean teste;
+	   if(valor <= this.saldo)
+	   {
+		   teste = true;
+	   }
+	   else
+	   {
+		   teste = false;
+	   }
+		   
+	   return teste;
+   }
    
 }
