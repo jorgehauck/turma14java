@@ -27,6 +27,7 @@ public class ListaProdutos {
 		lista.add("Óculos");
 		lista.add("Terno");
 		lista.add("Relógio");
+		lista.add("Lápis");
 		
 		if(op == '1')
 		{
