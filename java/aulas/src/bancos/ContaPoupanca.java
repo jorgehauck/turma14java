@@ -1,10 +1,10 @@
 package bancos;
 
 public class ContaPoupanca extends Conta {
-	
+
 	private int dataAniversarioConta;
-	
-	
+
+
 	public ContaPoupanca(int numeroConta, String cpf, int dataAniversario)
 	{
 		this.numeroConta = numeroConta;
@@ -19,18 +19,15 @@ public class ContaPoupanca extends Conta {
 	public void setDataAniversarioConta(int dataAniversarioConta) {
 		this.dataAniversarioConta = dataAniversarioConta;
 	}
-	
-      public void correcaoPoupanca(int dataAtual) {
-		
+
+	public void correcaoPoupanca(int dataAtual) {
+
 		if (dataAtual == this.dataAniversarioConta) {
 			super.credito((super.getSaldo()*0.005));
-			
-			
-			
+
 		}
-	}
-   
-   
-      
-      
+
+
+
+	}   
 }

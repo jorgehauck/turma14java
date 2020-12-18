@@ -4,9 +4,13 @@ public abstract class Conta {
    protected int numeroConta;
    protected double saldo;
    protected String cpf;
-   
+   /*
    public Conta()
    {
+	   
+   }
+   */
+   public Conta() {
 	   
    }
    public Conta(int numeroConta)
