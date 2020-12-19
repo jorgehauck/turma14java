@@ -1,5 +1,7 @@
 package loja;
 
+import java.util.Calendar;
+
 public abstract  class Pessoa {
 	protected String nome;
 	protected char genero;
@@ -33,7 +35,7 @@ public abstract  class Pessoa {
 		this.anoNascimento = anoNascimento;
 	}
 	
-	public int voltaIdade()
+	/*public int voltaIdade()
 	{
 		if(this.anoNascimento <= 1900)
 		{
@@ -45,19 +47,12 @@ public abstract  class Pessoa {
 			return 2020 - this.anoNascimento;
 		}
 	}
-
+*/
 
 	public int voltaIdade(int anoAtual)
 	{
-		if(anoAtual == 0 || this.anoNascimento <= 1900)
-		{
-			System.out.println("ANO ATUAL INVÁLIDO!!!");
-			return 0;
-		}
-		else
-		{
-			return anoAtual - this.anoNascimento;
-		}
+		
+		return anoAtual - this.anoNascimento;
 	}
 
 
