@@ -10,12 +10,10 @@ public class ContaEspecial extends ContaCorrente {
 		registraLimite();
 	}
 
-	
 	public ContaEspecial(int numeroConta, String cpf, double valorLimite) {
 		super(numeroConta, cpf);
 		this.valorLimite = valorLimite;
 	}
-
 
 	public double getValorLimite() {
 		return valorLimite;
@@ -34,15 +32,22 @@ public class ContaEspecial extends ContaCorrente {
 	public boolean testarSaldo(double valor) {
 
 		boolean teste;
-		if (valor <= super.getSaldo()) {
+		if (valor <= 0) {
+			teste = false;
+		}
+
+		else if (valor <= super.getSaldo()) {
 			teste = true;
 		} else if (valor <= this.valorLimite + super.getSaldo()) {
 			double valorCredito = valor - super.getSaldo();
 			credito(valorCredito);
 			this.valorLimite = this.valorLimite - valorCredito;
 			System.out.println("limite atual é R$" + this.valorLimite);
+			System.out.println("Saldo atual da conta é R$" + super.getSaldo());
 			teste = true;
-		} else {
+		}
+
+		else {
 			teste = false;
 		}
 		return teste;
@@ -57,22 +62,21 @@ public class ContaEspecial extends ContaCorrente {
 		}
 	}
 
-	
-	 
 	@Override
 	public void credito(double valorCredito) {
-		if (this.valorLimite < this.valorCadastroLimite) {
+
+		if (valorCredito <= 0) {
+			System.out.println("Valor de crédito inválido!");
+		} else if (this.valorLimite < this.valorCadastroLimite) {
 			double diferenca = this.valorCadastroLimite - this.valorLimite;
 			this.valorLimite += diferenca;
 			this.saldo = this.saldo + valorCredito - diferenca;
 			System.out.printf("Valor R$ %.2f creditado!\n", valorCredito);
-			System.out.println("Saldo atual da conta é R$" + super.getSaldo());
-			System.out.println("limite atual é R$" + this.valorLimite);
+
 		} else {
 			this.saldo = this.saldo + valorCredito;
 			System.out.printf("Valor R$ %.2f creditado!\n", valorCredito);
-			System.out.println("Saldo atual da conta é R$" + super.getSaldo());
-			System.out.println("limite atual é R$" + this.valorLimite);
+
 		}
 	}
 

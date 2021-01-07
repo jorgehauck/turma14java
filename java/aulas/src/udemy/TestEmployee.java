@@ -23,7 +23,7 @@ public class TestEmployee {
 			System.out.println("Id:");
 			int id = sc.nextInt();
 			System.out.println("Nome: ");
-			sc.nextLine();
+			sc.nextLine(); 
 			String nome = sc.nextLine();
 			System.out.println("Salario: ");
 			double salario = sc.nextDouble();
@@ -48,7 +48,7 @@ public class TestEmployee {
 			}
 			
 			System.out.println("Lista de Funcionários: ");
-			for(Employee i : list)
+			for(Employee i : list) // for each 
 			{
 				System.out.println(i);
 			}

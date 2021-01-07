@@ -35,7 +35,7 @@ public class CadLoja {
 		listaProdutos.add(new Produto("JJ-08","MOUSE",1250.00,10));
 		listaProdutos.add(new Produto("JJ-09","PENDRIVE 32GB",1000.00,10));
 		listaProdutos.add(new Produto("JJ-10","HD SSD 950GB",1150.00,10));
-
+		
 
 		System.out.println("════════════════════════════════════════════════");
 		System.out.println("\t\tJJ INFORMÁTICA®");
@@ -66,7 +66,7 @@ public class CadLoja {
 		System.out.printf("INFORME A QUANTIDADE DESEJADA: ");
 		qtde = leia.nextInt();
 
-		
+			
 			for(Produto lista : listaProdutos)
 			{
 				if(codigo.equals(lista.getCodigo()) && qtde <= lista.getQtdeProdutoEstoque() && qtde > 0)
@@ -118,14 +118,15 @@ public class CadLoja {
 		System.out.println();
 		linha(60);
 		System.out.printf("\nVALOR TOTAL DA COMPRA R$ %.2f",precoTotal);
-		numeroNotaFiscal ++;
-		numeroCodigoBarras ++;
+		numeroNotaFiscal++;
+		numeroCodigoBarras++;
 		encerrarCompra(precoTotal, c.getCpf(), numeroNotaFiscal, numeroCodigoBarras, c.getNome());
 	}
 
 	public static void encerrarCompra(double precoTotal, String cpfCliente, int numeroNotaFiscal, int numeroCodigoBarras, String nome)
 	{
 		Scanner sc = new Scanner (System.in);
+		
 		Timer timer = new Timer();
 		
 		int formaPagamento, delay = 5000, interval = 1000;
@@ -146,6 +147,7 @@ public class CadLoja {
 			valorFinalCompra = precoTotal - valorDesconto + impostos + valorJuros;
 			System.out.println();
 			System.out.println("PROCESSANDO EMISSÃO DE CUPOM FISCAL....");
+			
 			timer.scheduleAtFixedRate(new TimerTask() {
 		        public void run() {
 		        	System.out.println("╔══════════════════════════╗");

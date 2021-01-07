@@ -48,9 +48,12 @@ public class Employee {
 	
 	@Override
 	
-	public String toString()
+	public String toString() // classe Object classe mãe do java
 	{
-		return this.id+", "+this.nome+", "+String.format("%.2f", this.salario);
+		String resultado;
+		resultado = this.id+", "+this.nome+", "+String.format("%.2f", this.salario);
+		return resultado;
 	}
+		
 	
 }
