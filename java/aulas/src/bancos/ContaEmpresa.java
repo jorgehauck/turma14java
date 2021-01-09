@@ -35,6 +35,7 @@ public class ContaEmpresa extends Conta{
 		super.credito(valor);
 		//this.emprestimoEmpresa = this.emprestimoEmpresa - valor;
 		this.emprestimoEmpresa -= valor;
+		
 
 	}
 
