@@ -55,7 +55,7 @@ public class TestaCadastro {
 			if(cad.getNome().equals(nome))
 			{
 				cadastros.remove(cadastros.indexOf(cad));
-				break;
+				
 			}
 		}
 		System.out.println("Cadastro Atualizado!");
@@ -65,8 +65,6 @@ public class TestaCadastro {
 		}
 
 	}
-
-
 
 
 }
